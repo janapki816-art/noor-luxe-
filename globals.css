@@ -1,0 +1,19 @@
+@tailwind base; @tailwind components; @tailwind utilities;
+html{scroll-behavior:smooth;background:#0A0A0B}
+body{background:#0A0A0B;color:#F3EBDD;overflow-x:hidden}
+:focus-visible{outline:2px solid #C9A45C;outline-offset:3px}
+@layer components{
+ .eyebrow{@apply text-[11px] uppercase tracking-[.24em] text-gold}
+ .btn{@apply inline-flex min-h-[48px] items-center justify-center border border-gold px-7 text-xs font-medium uppercase tracking-[.22em] text-gold transition-colors hover:bg-gold hover:text-ink focus-visible:bg-gold focus-visible:text-ink disabled:opacity-40}
+ .field{@apply min-h-[48px] w-full border border-gold/30 bg-ink px-3 text-base text-ivory}
+ .card{@apply border border-gold/30 bg-charcoal p-3.5}
+ .ph{@apply grid aspect-[4/5] place-items-center bg-[radial-gradient(circle_at_50%_35%,#3a2f3d,#101014_70%)] font-serif text-sm italic text-muted}
+}
+.hero{background:radial-gradient(ellipse at 50% 30%,#241d2a 0%,#12101a 45%,#0A0A0B 80%)}
+.fig{position:absolute;top:14%;left:50%;width:min(46vw,220px);height:56%;transform:translateX(-50%);opacity:.5;background:linear-gradient(180deg,transparent 14%,rgba(243,235,221,.22) 30%,rgba(201,164,92,.1) 80%,transparent);clip-path:polygon(38% 6%,62% 6%,66% 18%,92% 28%,100% 70%,78% 100%,22% 100%,0 70%,8% 28%,34% 18%);filter:blur(1.5px);animation:breathe 7s ease-in-out infinite}
+.pool{position:absolute;bottom:0;left:-10%;right:-10%;height:30%;background:radial-gradient(ellipse 50% 60% at 50% 100%,rgba(201,164,92,.5),rgba(201,164,92,.1) 55%,transparent 75%);animation:breathe 7s ease-in-out infinite}
+.rise{opacity:0;transform:translateY(24px);animation:rise 1.4s cubic-bezier(.2,.7,.2,1) forwards}
+.d2{animation-delay:.35s}.d3{animation-delay:.7s}.d4{animation-delay:1.05s}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes breathe{50%{opacity:.8}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}}
